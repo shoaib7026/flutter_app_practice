@@ -5,9 +5,11 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.teal,
+
+
+        backgroundColor: Colors.yellowAccent,
         title: Text('Whatsapp'),
-        titleTextStyle: TextStyle(color: Colors.white, fontSize: 25),
+        titleTextStyle: TextStyle(color: Colors.black, fontSize: 25),
         centerTitle: true,
 
         actions: [
@@ -19,17 +21,21 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
 
-        actionsIconTheme: IconThemeData(color: Colors.white),
+        actionsIconTheme: IconThemeData(color: Colors.black),
       ),
 
       drawer: Drawer(
+
         child: Column(
           children: [
             UserAccountsDrawerHeader(
-              accountName: Text('Shoaib'),
-              accountEmail: Text('shoaib@gmail.com'),
+              accountName: Text('Shoaib',style: TextStyle(color: Colors.black),),
+              accountEmail: Text('shoaib@gmail.com',style: TextStyle(color: Colors.black),),
 
-              currentAccountPicture: CircleAvatar(child: Icon(Icons.person)),
+              currentAccountPicture: CircleAvatar(child: Icon(Icons.person,color: Colors.black,),backgroundColor: Colors.green,),
+               decoration: BoxDecoration(
+                 color: Colors.yellowAccent
+               ),
             ),
 
             ListTile(
@@ -55,17 +61,19 @@ class HomeScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            // 🔵 Banner
+
             Container(
               height: 450,
-              width: 1000, // optional, can remove if you want
-              color: Colors.blue,
+              width: 1000,
+          decoration: BoxDecoration(
+            image: DecorationImage(image: AssetImage('assets/main_baner.jpg'),fit: BoxFit.cover)
+          ),
             ),
 
-            // 🟡 Product Section
+
             Container(height: 400, width: 1000, color: Colors.amber),
 
-            // 🟢 Another Section
+
             Container(height: 100, width: 1000, color: Colors.green),
           ],
         ),
